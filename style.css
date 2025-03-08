@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', 'sans-serif';
+    background-color: rgb(10, 12, 11)
+}
+:root{
+    --dark-purple:#a113ff;
+    --light-purple:#e679ff;
+    --dark-orange:#fc8413;
+    --light-orange:#ffbf7b;
+    --dark-pink:#fe1799;
+    --light-pink:#fd9baa;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section{
+    min-height: 600px;
+    padding: 1.5rem;
+    display: flex;
+    gap:4rem;
+}
+.price_card{
+    position: relative;
+    width: 300px;
+    height:230px;
+    /* height: 550px; */
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-end;
+    box-shadow: 0 5px 10px var(--light-orange);
+    transition: height 0.3s ease;
+}
+.price_card:hover{
+    height: 550px;
+}
+.price_card .header{
+    position: absolute;
+    top:0;
+    width:110%;
+    height:230px;
+    color:#fff;
+    /* background-color:red; */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    z-index:1;
+}
+.price_card .header::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(
+        to right,
+        var(--dark-orange) ,
+        var(--light-orange)
+        );
+    border-radius:20px;
+    clip-path: polygon(0% 0%, 100%  0%, 100% 90%, 50% 100%, 0% 90%);
+}
+.price_card .header .info{
+    position: relative;
+    text-align: center;
+}
+.price_card .header .info h1{
+    margin-bottom: 0.6rem;
+    font-size:2.2rem;
+    letter-spacing: 2px; 
+}
+.price_card .header .info p{
+    font-size:0.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px; 
+}
+.price_card .header .price{
+    position:absolute;
+    top: 0;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    color:var(--dark-orange);
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0 5px 10px rgba( 0,0,0,0.2);
+}
+/* DESC */
+.price_card .desc{
+    height:320px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.price_card .desc li{
+    list-style: none;
+    color: #b1b1b1;
+    margin-bottom:1rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+.price_card .desc .icon{
+    font-size: 1.5rem;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.price_card .desc .icon.check{
+    color: #2bcb2b;
+}
+.price_card button{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border:none ;
+    outline:none;
+    background:linear-gradient(
+        to right,
+        var(--dark-orange),
+        var(--light-orange)
+    );
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    white-space:nowrap;
+    color: #fff;
+    cursor:pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0-5px 10px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+.price_card button:active{
+    scale: 0.95;
+}
+/* COLOR */
+/* CARD2 */
+.price_card card2{
+    box-shadow: 0 5px 10px var(--light-purple);
+}
+.price_card.card2 .header::before,
+.price_card.card2 button{
+    background:linear-gradient(
+        to right,
+        var(--dark-purple),
+        var(--light-purple)
+    );
+}
+.price_card.card2 .header .price{
+    color:var(--dark-purple)
+}
+/* CARD3 */
+.price_card card3{
+    box-shadow: 0 5px 10px var(--light-pink);
+}
+.price_card.card3 .header::before,
+.price_card.card3 button{
+    background:linear-gradient(
+        to right,
+        var(--dark-pink),
+        var(--light-pink)
+    );
+}
+.price_card.card3 .header .price{
+    color:var(--dark-pink)
+}
+
